@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Plugin Name Here
-Plugin URI: http://rocketlift.com/wordpress-plugins/my-plugin
+Plugin URI: http://rocketlift.com/software/wordpress-plugins/my-plugin
 Description: A brief description of the plugin here
 Version: 1.0
 Author: Rocket Lift Incorporated
