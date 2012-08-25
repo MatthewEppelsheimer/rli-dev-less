@@ -53,4 +53,4 @@ Release for public beta.
 
 See `LICENSE` file.
 
-Copyright (c) 2012 Rocket Lift Inc.
+Copyright (c) 2012 [Rocket Lift Inc.](http://rocketlift.com/)
