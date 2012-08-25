@@ -9,7 +9,7 @@ This plugin solves two problems for WordPress theme developers using LESS to wri
 
 The plugin makes two assumptions:
 
-1. Your wp-config.php file includes `define( 'WP_DEBUG', true );`
+1. Your theme's wp-config.php file includes `define( 'WP_DEBUG', true );` in development environments.
 2. Your theme adds your LESS stylesheets to the `wp_head` hook with a priority between 1 and 9, for example, add the following to your functions.php:
 
 ````
@@ -40,6 +40,8 @@ This plugin doesn't add any admin screens, settings, or options. The only option
 All this plugin does is efficiently enqueue resources for the LESS javascript compiler when and where it's appropriate.
 
 Note that even though this plugin won't load LESS resources in production, it's still a good idea to disable and remove this plugin on production sites for security.
+
+__BONUS!__ This plugin includes `grid.less` for the [Semantic Grid System](http://semantic.gs/). We'll probably remove this before publishing to the dot org repo because separation of concerns or something.
 
 ## Changelog
 
