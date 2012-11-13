@@ -68,5 +68,22 @@ function rli_dev_less_include() {
 	wp_enqueue_script( 'less', $plugin_url . 'js/less-1.1.3.min.js', '', '1.1.3' );
 	wp_enqueue_script( 'less-env-setup', $plugin_url . 'js/setup.js', array( 'less' ) );
 	wp_enqueue_script( 'less-flush-local-storage', $plugin_url . 'js/flush-local-storage.js', array( 'less-env-setup' ) );
+
+	// Include grid.less
+	wp_enqueue_style( 'semantic-grid-less', $plugin_url . 'css/grid.less' );
+
+	// Include theme files
+	wp_enqueue_style( 'theme-style-less', get_stylesheet_directory_uri() . "/css/style.less", array( 'semantic-grid-less' ) );
 }
 
+/*
+ *	Filter output of enqueued LESS stylesheets to include the correct <link[type]>
+ */
+
+function rli_dev_less_style_type( $input ) {
+	$output = $input;
+	if ( strstr( $input, "id='theme-style-less-css'" ) || strstr( $input, "id='semantic-grid-less-css'" ) )
+		$output = str_replace( "type='text/css'", "type='text/less'", $input );
+	return $output;
+}
+add_filter( 'style_loader_tag', 'rli_dev_less_style_type', 10 );
